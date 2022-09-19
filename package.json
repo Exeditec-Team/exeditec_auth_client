@@ -1,9 +1,9 @@
 {
   "name": "exeditec-auth-client",
-  "version": "0.1.6",
+  "version": "0.1.5",
   "description": "Auth client for Exeditec api",
-  "main": "dist/index.d.ts",
-  "type": "module",
+  "main": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"

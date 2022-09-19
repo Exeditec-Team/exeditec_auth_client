@@ -1,11 +1,12 @@
-import axios from "axios";
+import axios, { Axios } from "axios";
 import jwtDecode from "jwt-decode";
 import { AdminClass } from "../repository/Admin";
 import { Auth } from "../repository/Auth";
 import { MFAClass } from "../repository/MFA";
 import { User } from "../repository/User";
+import { CLientInstance } from "./clientInstance";
 
-type Decoded = {
+export type Decoded = {
   exp: string | undefined;
   roles: Array<string> | undefined;
 };
@@ -56,7 +57,7 @@ export class AuthApiClient {
           localStorage.setItem("APP_REFRESH_TOKEN", refresh_token);
         }
 
-        return response;
+        return response.data;
       },
 
       async function (error: any) {
@@ -166,6 +167,9 @@ export class AuthApiClient {
     if (decoded?.roles?.includes("ADMIN")) {
       return new AdminClass(this.axiosInstance);
     }
+  }
+  public client(baseURL: string): Axios {
+    return new CLientInstance(this.axiosInstance, baseURL).client;
   }
 }
 
