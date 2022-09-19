@@ -1,14 +1,22 @@
 {
   "name": "exeditec-auth-client",
-  "version": "0.1.5",
+  "version": "0.1.10",
   "description": "Auth client for Exeditec api",
   "main": "src/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Exeditec-Team/exeditec_auth_client.git"
+  },
+  "keywords": [
+    "http",
+    "promise",
+    "node",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
